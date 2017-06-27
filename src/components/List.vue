@@ -1,6 +1,8 @@
 <template>
-  <div class="list">
-    <h1>{{ msg }}</h1>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1>{{ msg }}</h1>
+    </div>
   </div>
 </template>
 

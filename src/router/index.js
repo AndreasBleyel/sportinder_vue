@@ -4,8 +4,13 @@ import Hello from '@/components/Hello'
 import Create from '@/components/Create'
 import Detail from '@/components/Detail'
 import List from '@/components/List'
+import BootstrapVue from 'bootstrap-vue'
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.use(Router)
+Vue.use(BootstrapVue)
 
 export default new Router({
   routes: [
