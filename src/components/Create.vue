@@ -13,9 +13,9 @@
       </div>
       <p></p>
 
-      <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-text-size"></i></span>
-        <input id="description" type="text" class="form-control" name="beschreibung" placeholder="Kurzbeschreibung">
+      <div class="form-group">
+        <label for="description">Beschreibung der Aktivität</label>
+        <textarea class="form-control" rows="5" id="description"></textarea>
       </div>
       <p></p>
 
@@ -37,21 +37,26 @@
       </div>
       <p></p>
 
+      <form action="/action_page.php">
+        Datum
+        <input type="date" name="datum">
+      </form>
+      <!--
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
         <input id="date" type="text" class="form-control" name="datum" placeholder="Datum">
+      </div>-->
+      <p></p>
+
+      <div class="input-group" data-time="now">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+        <input id="time" class="form-control" name="zeit" placeholder="Startzeit">
       </div>
       <p></p>
 
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        <input id="time" type="text" class="form-control" name="zeit" placeholder="Startzeit">
-      </div>
-      <p></p>
-
-      <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        <input id="duration" type="text" class="form-control" name="dauer" placeholder="Dauer">
+        <input id="duration" class="form-control" name="dauer" placeholder="Dauer">
       </div>
       <p></p>
 
