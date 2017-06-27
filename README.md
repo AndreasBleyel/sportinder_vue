@@ -9,8 +9,11 @@ created with Vue.js and Loopback
 # install dependencies
 npm install
 
-# install bootstrap
+# install bootstrap for styling
 npm install bootstrap-vue --save
+
+# install vue-resource for HTTP requests
+npm install vue-resource
 
 # serve with hot reload at localhost:8080
 npm run dev
