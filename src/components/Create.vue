@@ -1,15 +1,14 @@
 <template>
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
+
   <div class="Create">
     <h1>{{ msg }}</h1>
-
 
 
     <form id="form">
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input id="name" type="text" class="form-control" name="name" placeholder="Name der Aktivität" v-model="activity.name">
+        <input id="name" type="text" class="form-control" name="name" placeholder="Name der Aktivität"
+               v-model="activity.name">
       </div>
       <p></p>
 
@@ -27,13 +26,15 @@
 
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
-        <input id="street" type="text" class="form-control" name="straße" placeholder="Straße" v-model="activity.startingadr">
+        <input id="street" type="text" class="form-control" name="straße" placeholder="Straße"
+               v-model="activity.startingadr">
       </div>
       <p></p>
 
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        <input id="creator" type="text" class="form-control" name="ersteller" placeholder="Dein Name" v-model="activity.creator">
+        <input id="creator" type="text" class="form-control" name="ersteller" placeholder="Dein Name"
+               v-model="activity.creator">
       </div>
       <p></p>
 
@@ -62,7 +63,8 @@
 
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
-        <select class="form-control" id="difficulty" placeholder="Schwierigkeitsstufe" v-model="activity.difficulty">
+        <select class="form-control" id="difficulty" placeholder="Schwierigkeitsstufe"
+                v-model="activity.difficulty">
           <option selected hidden>Schwierigkeitsstufe</option>
           <option>leicht</option>
           <option>leicht - mittel</option>
@@ -77,11 +79,11 @@
 
     </form>
 
-    <button v-on:click="submit" type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i>Bestätigen</button>
+    <button v-on:click="submit" type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i>Bestätigen
+    </button>
     <p></p>
-                    </div>
-    </div>
   </div>
+
 </template>
 
 <script>
@@ -92,35 +94,35 @@
         msg: 'Create Page',
 
         activity: {
-            name: '',
-            description: '',
-            creator: '',
-            startingtime: '',
-            difficulty: '',
-            duration: '',
-            startingadr: ''
+          name: '',
+          description: '',
+          creator: '',
+          startingtime: '',
+          difficulty: '',
+          duration: '',
+          startingadr: ''
         }
       }
     },
     methods: {
-            submit: function () {
-             this.$http.post('http://localhost:3000/api/activities', {
-                 name: this.activity.name,
-                 description: this.activity.description,
-                 creator: this.activity.creator,
-                 startingtime: this.activity.startingtime,
-                 difficulty: this.activity.difficulty,
-                 duration: this.activity.duration,
-                 startingadr: this.activity.startingadr
-               },
-               function(response) {
-                 alert(response);
+      submit: function () {
+        this.$http.post('http://localhost:3000/api/activities', {
+            name: this.activity.name,
+            description: this.activity.description,
+            creator: this.activity.creator,
+            startingtime: this.activity.startingtime,
+            difficulty: this.activity.difficulty,
+            duration: this.activity.duration,
+            startingadr: this.activity.startingadr
+          },
+          function (response) {
+            alert(response);
 
-             });
-             console.log(this.activity);
-            }
+          });
+        console.log(this.activity);
+      }
 
-          }
+    }
   }
 </script>
 
