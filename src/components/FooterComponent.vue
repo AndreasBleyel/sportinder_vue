@@ -1,15 +1,13 @@
 <template>
   <div id="FooterComponent">
 
-    <footer class="col-md-8 offset-md-2">
-      <p>Andreas Bleyel, Paula
-        Engelberg, Benjamin Larcher,
-        Michael Lauf und Sandra Rauscher</p>
-      <p>Kontakt: <a href="mailto:someone@example.com">someone@example.com</a>.</p>
-    </footer>
+    <b-navbar toggleable type="inverse" variant="bottom" class="col-md-12" style="background-color: #42b983">
+
+        <p>Ich bin der Footer</p>
+
+    </b-navbar>
 
   </div>
-
 
 </template>
 
