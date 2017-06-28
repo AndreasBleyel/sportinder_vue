@@ -79,8 +79,8 @@
 
     </form>
 
-    <button v-on:click="submit" type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i>Bestätigen
-    </button>
+    <router-link to="/"><button v-on:click="submit" type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i>Bestätigen
+    </button></router-link>
     <p></p>
   </div>
 
@@ -105,6 +105,7 @@
     },
     methods: {
       submit: function () {
+
         this.$http.post('http://localhost:3000/api/activities', {
             name: this.activity.name,
             description: this.activity.description,

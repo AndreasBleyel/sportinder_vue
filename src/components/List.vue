@@ -7,11 +7,40 @@
       <div class="col-md-6 offset-md-3">
         <button v-on:click="getActivities" type="button" class="btn btn-normal"><i class="glyphicon glyphicon-ok">Aktualisieren</i>
         </button>
-        <ul>
-          <li v-for="activity in activities">
-            {{activity.name}} {{activity.description}}
-          </li>
-        </ul>
+      </div>
+      <div class="row">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Beschreibung</th>
+            <th>Erstellt von</th>
+            <th>Startpunkt</th>
+            <th>Startzeit</th>
+            <th>Dauer</th>
+            <th>Schwierigkeit</th>
+            <th>Details</th>
+
+          </tr>
+          </thead>
+          <tbody>
+
+          <tr v-for="activity in activities">
+            <td>{{activity.name}}</td>
+            <td>{{activity.description}}</td>
+            <td>{{activity.creator}}</td>
+            <td>{{activity.startingadr}}</td>
+            <td>{{activity.startingtime}}</td>
+            <td>{{activity.duration}}</td>
+            <td>{{activity.difficulty}}</td>
+            <td>
+              <router-link to="Detail">Details</router-link>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+
       </div>
     </div>
 
@@ -19,6 +48,7 @@
 </template>
 
 <script>
+
   export default {
     name: 'List',
     data () {
@@ -56,12 +86,9 @@
           });
         }
       }
-
-    },
-    ready: function () {
-      this.getActivities();
     }
   }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
