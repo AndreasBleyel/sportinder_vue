@@ -5,8 +5,7 @@
 
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <button v-on:click="getActivity(1)" type="button" class="btn btn-normal"><i class="glyphicon glyphicon-ok">Aktualisieren</i>
-        </button>
+        <button v-on:click="getActivity(1)" type="button" class="btn btn-normal">Aktualisieren</button>
       </div>
       <div class="row">
         <table class="table table-striped">

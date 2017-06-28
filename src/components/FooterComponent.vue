@@ -1,8 +1,8 @@
 <template>
-  <div id="Footer">
+  <div id="FooterComponent">
 
-    <footer class="navbar navbar-inverse navbar-fixed-bottom col-md-8 offset-md-2">
-      <p>Made by: Andreas Bleyel, Paula
+    <footer class="col-md-8 offset-md-2">
+      <p>Andreas Bleyel, Paula
         Engelberg, Benjamin Larcher,
         Michael Lauf und Sandra Rauscher</p>
       <p>Kontakt: <a href="mailto:someone@example.com">someone@example.com</a>.</p>
@@ -15,7 +15,7 @@
 
 <script>
   export default {
-    name: 'Footer'
+    name: 'FooterComponent'
   }
 </script>
 

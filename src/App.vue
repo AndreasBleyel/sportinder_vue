@@ -9,7 +9,8 @@
       </div>
     </div>
 
-    <footer></footer>
+    <footer-component></footer-component>
+
   </div>
 
 
@@ -18,11 +19,11 @@
 <script>
   import Navbar from "./components/Navbar";
   import Hello from "./components/Hello";
-  import Footer from "./components/Footer";
+  import FooterComponent from "./components/FooterComponent";
 
   export default {
     components: {
-      Footer,
+      FooterComponent,
       Hello,
       Navbar
     },

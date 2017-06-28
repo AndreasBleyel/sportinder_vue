@@ -12,19 +12,24 @@
       <b-collapse is-nav id="nav_collapse">
 
         <b-nav is-nav-bar>
-          <b-nav-item><router-link to="List">Alle Aktivitäten</router-link></b-nav-item>
-          <b-nav-item><router-link to="Create">Aktivität erstellen</router-link></b-nav-item>
+          <b-nav-item>
+            <router-link to="List">Alle Aktivitäten</router-link>
+          </b-nav-item>
+          <b-nav-item>
+            <router-link to="Create">Aktivität erstellen</router-link>
+          </b-nav-item>
         </b-nav>
 
       </b-collapse>
     </b-navbar>
 
-</div>
+  </div>
 
 
 </template>
 
 <script>
+
   export default {
     name: 'Navbar'
   }
