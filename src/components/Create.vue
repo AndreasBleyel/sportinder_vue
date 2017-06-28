@@ -1,7 +1,7 @@
 <template>
 
   <div class="Create">
-    <h1>{{ msg }}</h1>
+    <h1>Neue Aktivität erstellen</h1>
 
 
     <form id="form">
@@ -91,7 +91,6 @@
     name: 'Create',
     data () {
       return {
-        msg: 'Create Page',
 
         activity: {
           name: '',
