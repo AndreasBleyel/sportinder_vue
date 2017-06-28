@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="row">
-      <div class="col-md-6 offset-md-3">
+      <div class="col-md-8 offset-md-2">
 
         <img src="./assets/sportinderLogo.png">
         <router-view></router-view>
@@ -36,5 +36,23 @@
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+  }
+
+   h1, h2 {
+     font-weight: normal;
+   }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  a {
+    color: #42b983;
   }
 </style>

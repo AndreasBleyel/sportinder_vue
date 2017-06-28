@@ -1,8 +1,36 @@
 <template>
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <h1>{{ msg }}</h1>
+  <div class="List">
+
+      <h1>Auflistung aller Aktivitäten</h1>
+
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <ul>
+          <li>
+           Aktivität
+          </li>
+          <li>
+            Aktivität
+          </li>
+          <li>
+            Aktivität
+          </li>
+          <li>
+            Aktivität
+          </li>
+          <li>
+            Aktivität
+          </li>
+          <li>
+            Aktivität
+          </li>
+          <li>
+            Aktivität
+          </li>
+        </ul>
+      </div>
     </div>
+
   </div>
 </template>
 
@@ -11,7 +39,6 @@
     name: 'List',
     data () {
       return {
-        msg: 'List Page'
       }
     }
   }
