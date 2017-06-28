@@ -1,34 +1,37 @@
 <template>
   <div id="app">
+
+    <navbar></navbar>
+
     <div class="row">
       <div class="col-md-8 offset-md-2">
-
-        <img src="./assets/sportinderLogo.png">
         <router-view></router-view>
       </div>
     </div>
 
-    <div class="row">
-      <footer class="navbar navbar-inverse navbar-fixed-bottom col-md-8 offset-md-2">
-        <p>Made by: Andreas Bleyel, Paula
-          Engelberg, Benjamin Larcher,
-          Michael Lauf und Sandra Rauscher</p>
-        <p>Kontakt: <a href="mailto:someone@example.com">someone@example.com</a>.</p>
-      </footer>
-    </div>
-
+    <footer></footer>
   </div>
 
 
 </template>
 
 <script>
+  import Navbar from "./components/Navbar";
+  import Hello from "./components/Hello";
+  import Footer from "./components/Footer";
+
   export default {
+    components: {
+      Footer,
+      Hello,
+      Navbar
+    },
     name: 'app'
   }
 </script>
 
 <style>
+
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -38,9 +41,9 @@
     margin-top: 60px;
   }
 
-   h1, h2 {
-     font-weight: normal;
-   }
+  h1, h2 {
+    font-weight: normal;
+  }
 
   ul {
     list-style-type: none;
