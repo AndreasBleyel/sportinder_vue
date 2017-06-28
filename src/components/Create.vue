@@ -77,7 +77,7 @@
 
     </form>
 
-    <button v-on:click="submit" type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i> Bestätigen</button>
+    <button v-on:click="submit" type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i>Bestätigen</button>
     <p></p>
                     </div>
     </div>
@@ -91,14 +91,29 @@
       return {
         msg: 'Create Page',
 
-        activity: {name: '', description: '', creator: '', startingtime: '', difficulty: '', duration: '', startingadr: ''}
-
-
+        activity: {
+            name: '',
+            description: '',
+            creator: '',
+            startingtime: '',
+            difficulty: '',
+            duration: '',
+            startingadr: ''
+        }
       }
     },
     methods: {
             submit: function () {
-             this.$http.post('http://localhost:3000/api/activities', {name: this.activity.name, description: this.activity.description, creator: this.activity.creator, startingtime: this.activity.startingtime, difficulty: this.activity.difficulty, duration: this.activity.duration, startingadr: this.activity.startingadr}, function(response) {
+             this.$http.post('http://localhost:3000/api/activities', {
+                 name: this.activity.name,
+                 description: this.activity.description,
+                 creator: this.activity.creator,
+                 startingtime: this.activity.startingtime,
+                 difficulty: this.activity.difficulty,
+                 duration: this.activity.duration,
+                 startingadr: this.activity.startingadr
+               },
+               function(response) {
                  alert(response);
 
              });
@@ -109,7 +124,3 @@
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-</style>
