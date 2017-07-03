@@ -51,11 +51,7 @@
 
       <p></p>
 
-      <div class="input-group" data-time="now">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        <input id="time" class="form-control" name="zeit" placeholder="Startzeit" v-model="activity.startingtime">
-      </div>
-      <p></p>
+
 
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -67,7 +63,7 @@
         <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
         <select class="form-control" id="difficulty" placeholder="Schwierigkeitsstufe"
                 v-model="activity.difficulty">
-          <option selected hidden>Schwierigkeitsstufe</option>
+          <option value="" selected disabled>Schwierigkeit</option>
           <option>leicht</option>
           <option>leicht - mittel</option>
           <option>mittel</option>
