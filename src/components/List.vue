@@ -3,8 +3,9 @@
 
     <h1>Auflistung aller Aktivitäten</h1>
 
-      <detail></detail>
-
+    <div v-for="activity in activities">
+      <detail :idActivity="activity.id"></detail>
+    </div>
 
 
   </div>
@@ -20,22 +21,11 @@
     data () {
       return {
 
-        activities: [
-          {
-            name: '',
-            description: '',
-            creator: '',
-            startingtime: '',
-            difficulty: '',
-            duration: '',
-            startingadr: ''
-          }
-        ]
+        activities: []
 
       }
     },
     created: function () {
-      // `this` points to the vm instance
       this.getActivities();
     },
     methods: {

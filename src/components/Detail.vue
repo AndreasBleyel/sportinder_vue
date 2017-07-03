@@ -9,7 +9,7 @@
             show-footer
     >
       <small slot="footer" class="text-muted">
-        erstellt von: {{activity.creator}}
+        erstellt von: {{activity.creator}} ID: {{activity.id}} Props: {{idActivity}}
       </small>
     </b-card>
 
@@ -19,6 +19,12 @@
 <script>
   export default {
     name: 'Detail',
+    props: {
+      idActivity: {
+        type: Number,
+        required: true
+      }
+    },
     data () {
       return {
 
@@ -34,8 +40,7 @@
       }
     },
     created: function () {
-      // `this` points to the vm instance
-      this.getActivity(1);
+           this.getActivity(this.idActivity);
     },
     methods: {
       getActivity: function (idActivity) {
