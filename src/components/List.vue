@@ -3,50 +3,19 @@
 
     <h1>Auflistung aller Aktivitäten</h1>
 
-    <div class="row">
+      <detail></detail>
 
-      <div class="row">
-        <table class="table table-striped">
-          <thead>
-          <tr>
-            <th>Name</th>
-            <th>Beschreibung</th>
-            <th>Erstellt von</th>
-            <th>Startpunkt</th>
-            <th>Startzeit</th>
-            <th>Dauer</th>
-            <th>Schwierigkeit</th>
-            <th>Details</th>
 
-          </tr>
-          </thead>
-          <tbody>
-
-          <tr v-for="activity in activities">
-            <td>{{activity.name}}</td>
-            <td>{{activity.description}}</td>
-            <td>{{activity.creator}}</td>
-            <td>{{activity.startingadr}}</td>
-            <td>{{activity.startingtime}}</td>
-            <td>{{activity.duration}}</td>
-            <td>{{activity.difficulty}}</td>
-            <td>
-              <router-link to="Detail">Details</router-link>
-            </td>
-          </tr>
-
-          </tbody>
-        </table>
-
-      </div>
-    </div>
 
   </div>
+
 </template>
 
 <script>
+  import Detail from "./Detail";
 
   export default {
+    components: {Detail},
     name: 'List',
     data () {
       return {

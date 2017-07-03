@@ -1,42 +1,18 @@
 <template>
   <div class="Detail">
 
-    <h1>Detailierte Ansicht für Aktivität</h1>
+    <b-card header="Aktivität"
+            class="mb-2"
+            :title="activity.name"
+            :sub-title="activity.description + ' <br><hr>Startadresse: ' + activity.startingadr + '<br>Startzeit: ' + activity.startingtime +
+            '<br>Dauer: ' + activity.duration + '<br>Schwierigkeit: ' + activity.difficulty"
+            show-footer
+    >
+      <small slot="footer" class="text-muted">
+        erstellt von: {{activity.creator}}
+      </small>
+    </b-card>
 
-    <div class="row">
-
-      <div class="row">
-        <table class="table table-striped">
-          <thead>
-          <tr>
-            <th>Name</th>
-            <th>Beschreibung</th>
-            <th>Erstellt von</th>
-            <th>Startpunkt</th>
-            <th>Startzeit</th>
-            <th>Dauer</th>
-            <th>Schwierigkeit</th>
-
-          </tr>
-          </thead>
-          <tbody>
-
-          <tr>
-            <td>{{activity.name}}</td>
-            <td>{{activity.description}}</td>
-            <td>{{activity.creator}}</td>
-            <td>{{activity.startingadr}}</td>
-            <td>{{activity.startingtime}}</td>
-            <td>{{activity.duration}}</td>
-            <td>{{activity.difficulty}}</td>
-
-          </tr>
-
-          </tbody>
-        </table>
-
-      </div>
-    </div>
   </div>
 </template>
 
