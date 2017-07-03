@@ -13,10 +13,43 @@
       </small>
     </b-card>
 
+    <gmap-map
+        :center="center"
+        :zoom="7"
+        style="width: 500px; height: 300px"
+      >
+        <gmap-marker
+          :key="index"
+          v-for="(m, index) in markers"
+          :position="m.position"
+          :clickable="true"
+          :draggable="true"
+          @click="center=m.position"
+        ></gmap-marker>
+      </gmap-map>
+
+
+
+
   </div>
 </template>
 
 <script>
+
+import * as VueGoogleMaps from 'vue2-google-maps';
+
+
+    import Vue from 'vue'
+
+  Vue.use(VueGoogleMaps, {
+    load: {
+      key: 'AIzaSyBd07B0X9cY9_i0LQCZBNYyNZoeO59Io-g',
+      v: '3'
+        // libraries: 'places', //// If you need to use place input
+    }
+  })
+
+
   export default {
     name: 'Detail',
     props: {
@@ -28,6 +61,11 @@
     data () {
       return {
 
+      center: {lat: 10.0, lng: 10.0},
+                 markers: [{
+                   position: {lat: 10.0, lng: 10.0}
+                 }],
+
         activity: {
           name: '',
           description: '',
@@ -35,7 +73,9 @@
           startingtime: '',
           difficulty: '',
           duration: '',
-          startingadr: ''
+          startingadr: '',
+          long: '',
+          lat: ''
         }
       }
     },
@@ -50,6 +90,12 @@
         // GET someItem/1
         resource.get({id: idActivity}).then(response => {
           this.activity = response.body;
+
+this.center.lat = parseFloat(this.activity.lat);
+this.center.lng = parseFloat(this.activity.long);
+this.markers.push({position: {lat: parseFloat(this.activity.lat), lng: parseFloat(this.activity.long)}});
+console.log(this.center.lat);
+
         });
       }
     }
