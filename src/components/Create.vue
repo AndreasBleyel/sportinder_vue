@@ -20,7 +20,8 @@
 
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-        <input id="city" type="city" class="form-control" name="stadt" placeholder="Stadt">
+        <input id="city" type="city" class="form-control" name="stadt" placeholder="Stadt"
+        v-model="activity.city">
       </div>
       <p></p>
 
@@ -38,15 +39,16 @@
       </div>
       <p></p>
 
-      <form action="/action_page.php">
-        Datum
-        <input type="date" name="datum">
-      </form>
-      <!--
-      <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        <input id="date" type="text" class="form-control" name="datum" placeholder="Datum">
-      </div>-->
+
+
+<div class="input-group">
+
+<div class="row">
+      <span>Datum：</span>
+      <date-picker :date="date" :option="timeoption" :limit="limit" v-model="activity.date"></date-picker>
+    </div>
+    </div>
+
       <p></p>
 
       <div class="input-group" data-time="now">
@@ -87,6 +89,9 @@
 </template>
 
 <script>
+
+import myDatepicker from 'vue-datepicker'
+
   export default {
     name: 'Create',
     data () {
@@ -99,10 +104,84 @@
           startingtime: '',
           difficulty: '',
           duration: '',
-          startingadr: ''
-        }
+          startingadr: '',
+          city: '',
+          date: ''
+        },
+        date: {
+        time: ''
+        },
+
+
+        starttime: '',
+        endtime: '2016-01-19',
+        testTime: '',
+        multiTime: '',
+
+        startTime: {
+                      time: ''
+         },
+                    endtime: {
+                      time: ''
+                    },
+
+                     option: {
+                            type: 'day',
+                            week: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
+                            month: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                            format: 'YYYY-MM-DD',
+                            placeholder: 'auswählen',
+                            inputStyle: {
+                              'display': 'inline-block',
+                              'padding': '6px',
+                              'line-height': '22px',
+                              'font-size': '16px',
+                              'border': '2px solid #fff',
+                              'box-shadow': '0 1px 3px 0 rgba(0, 0, 0, 0.2)',
+                              'border-radius': '2px',
+                              'color': '#5F5F5F'
+                            },
+                            color: {
+                                      header: '#ccc',
+                                      headerText: '#f00'
+                                    },
+                                    buttons: {
+                                      ok: 'Ok',
+                                      cancel: 'Cancel'
+                                    },
+                                    overlayOpacity: 0.5, // 0.5 as default
+                                    dismissible: true // as true as default
+                                  },
+                                  timeoption: {
+                                          type: 'min',
+                                          week: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
+                                          month: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                                          format: 'YYYY-MM-DD HH:mm'
+                                        },
+                                        multiOption: {
+                                          type: 'multi-day',
+                                          week: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
+                                          month: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                                          format:"YYYY-MM-DD HH:mm"
+                                        },
+                                        limit: [{
+                                                type: 'weekday',
+                                                available: [1, 2, 3, 4, 5]
+                                              },
+                                              {
+                                                type: 'fromto',
+                                                from: '2016-02-01',
+                                                to: '2016-02-20'
+                                              }]
+
+
+
+
       }
     },
+    components: {
+        'date-picker': myDatepicker
+      },
     methods: {
       submit: function () {
 
@@ -110,10 +189,10 @@
             name: this.activity.name,
             description: this.activity.description,
             creator: this.activity.creator,
-            startingtime: this.activity.startingtime,
+            startingtime: this.date.time,
             difficulty: this.activity.difficulty,
             duration: this.activity.duration,
-            startingadr: this.activity.startingadr
+            startingadr: this.activity.city +', '+this.activity.startingadr
           },
           function (response) {
             alert(response);
