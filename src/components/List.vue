@@ -4,10 +4,7 @@
     <h1>Auflistung aller Aktivitäten</h1>
 
     <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <button v-on:click="getActivities" type="button" class="btn btn-normal"><i class="glyphicon glyphicon-ok">Aktualisieren</i>
-        </button>
-      </div>
+
       <div class="row">
         <table class="table table-striped">
           <thead>
@@ -67,6 +64,10 @@
         ]
 
       }
+    },
+    created: function () {
+      // `this` points to the vm instance
+      this.getActivities();
     },
     methods: {
 

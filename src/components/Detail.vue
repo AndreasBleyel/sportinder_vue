@@ -4,9 +4,7 @@
     <h1>Detailierte Ansicht für Aktivität</h1>
 
     <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <button v-on:click="getActivity(1)" type="button" class="btn btn-normal">Aktualisieren</button>
-      </div>
+
       <div class="row">
         <table class="table table-striped">
           <thead>
@@ -58,6 +56,10 @@
           startingadr: ''
         }
       }
+    },
+    created: function () {
+      // `this` points to the vm instance
+      this.getActivity(1);
     },
     methods: {
       getActivity: function (idActivity) {
