@@ -18,9 +18,6 @@
           <b-nav-item>
             <router-link to="Create">Aktivität erstellen</router-link>
           </b-nav-item>
-          <b-nav-item>
-            <router-link to="Detail">Detail Ansicht</router-link>
-          </b-nav-item>
         </b-nav>
 
       </b-collapse>

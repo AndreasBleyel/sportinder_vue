@@ -57,7 +57,7 @@
 
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        <input id="duration" class="form-control" name="dauer" placeholder="Dauer" v-model="activity.duration">
+        <input id="duration" class="form-control" name="dauer" placeholder="Dauer in Minuten" v-model="activity.duration">
       </div>
       <p></p>
 
