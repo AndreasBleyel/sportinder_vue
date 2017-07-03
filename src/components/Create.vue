@@ -86,7 +86,7 @@
 
 <script>
 
-import myDatepicker from 'vue-datepicker'
+import myDatepicker from 'vue-datepicker/vue-datepicker-es6.vue'
 
   export default {
     name: 'Create',
