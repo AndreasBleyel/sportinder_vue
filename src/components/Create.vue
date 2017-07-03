@@ -32,6 +32,22 @@
       </div>
       <p></p>
 
+
+      <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+              <input id="long" type="text" class="form-control" name="longitude" placeholder="Longitude"
+                     v-model="activity.long">
+            </div>
+            <p></p>
+
+
+            <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                    <input id="lat" type="text" class="form-control" name="latitude" placeholder="Latitude"
+                           v-model="activity.lat">
+                  </div>
+                  <p></p>
+
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
         <input id="creator" type="text" class="form-control" name="ersteller" placeholder="Dein Name"
@@ -106,7 +122,9 @@ import myDatepicker from 'vue-datepicker'
           duration: '',
           startingadr: '',
           city: '',
-          date: ''
+          date: '',
+          long: '',
+          lat: ''
         },
         date: {
         time: ''
@@ -192,7 +210,9 @@ import myDatepicker from 'vue-datepicker'
             startingtime: this.date.time,
             difficulty: this.activity.difficulty,
             duration: this.activity.duration,
-            startingadr: this.activity.city +', '+this.activity.startingadr
+            startingadr: this.activity.city +', '+this.activity.startingadr,
+            lat: this.activity.lat,
+            long: this.activity.long
           },
           function (response) {
             alert(response);
