@@ -3,8 +3,13 @@
 
     <b-navbar toggleable type="inverse" variant="bottom" class="col-md-12" style="background-color: #42b983">
 
-        <p>Ich bin der Footer</p>
+       <div id="contact"> <br><p>Kontakt: </p>
+        <p>E-Mail: team@sportinder.at <br>
+        Telefon: 05332 89234
 
+        </p>
+
+<p>©2017</p> </div>
     </b-navbar>
 
   </div>
@@ -18,5 +23,9 @@
 </script>
 
 <style>
+
+#contact {
+    margin:0 auto;
+}
 
 </style>

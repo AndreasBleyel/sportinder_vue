@@ -1,11 +1,9 @@
-*.csv
 *.dat
 *.iml
 *.log
 *.out
 *.pid
 *.seed
-*.sublime-*
 *.swo
 *.swp
 *.tgz

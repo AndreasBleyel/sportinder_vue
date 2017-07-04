@@ -58,12 +58,11 @@
 
 
 <div class="input-group">
+<p>Datum:  <br></p>
+       <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+      <date-picker :date="date" :option="timeoption"  v-model="activity.date" ></date-picker>
+    </div>
 
-<div class="row">
-      <span>Datum：</span>
-      <date-picker :date="date" :option="timeoption"  v-model="activity.date"></date-picker>
-    </div>
-    </div>
 
       <p></p>
 
@@ -93,7 +92,7 @@
 
     </form>
 
-    <router-link to="/"><button v-on:click="submit" type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i>Bestätigen
+    <router-link to="/"><button v-on:click="submit" type="submit" class="btn"><i class="glyphicon glyphicon-ok"></i>Bestätigen
     </button></router-link>
     <p></p>
   </div>
@@ -219,5 +218,32 @@ import myDatepicker from 'vue-datepicker/vue-datepicker-es6.vue'
 
     }
   }
+
 </script>
+
+<style>
+.btn {
+color: white;
+    background-color: #42b983 !important;
+}
+
+.btn:hover {
+    background-color: #ddd !important;
+    color: black;
+}
+
+.cov-date-body[data-v-5afd03d7] {
+font-family: Avenir !important;
+background-color: #42b983 !important;
+}
+
+li {
+margin: 0 !important;
+}
+
+input.cov-datepicker {
+    line-height: 2.10em !important;
+}
+</style>
+
 
