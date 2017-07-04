@@ -93,7 +93,7 @@
 
     </form>
 
-    <router-link to="/"><button v-on:click="submit" type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i>Bestätigen
+    <router-link to="/"><button v-on:click="submit" type="submit" class="btn"><i class="glyphicon glyphicon-ok"></i>Bestätigen
     </button></router-link>
     <p></p>
   </div>
@@ -220,5 +220,19 @@ import myDatepicker from 'vue-datepicker/vue-datepicker-es6.vue'
 
     }
   }
+
 </script>
+
+<style>
+.btn {
+color: white;
+    background-color: #42b983 !important;
+}
+
+.btn:hover {
+    background-color: #ddd !important;
+    color: black;
+}
+
+</style>
 

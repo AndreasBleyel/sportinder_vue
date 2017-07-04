@@ -2,7 +2,7 @@
   <div class="Hello">
 
     <h1>Welcome to SporTinder</h1>
-    <p>Wir helfen dir einen Partner für deine sportlichen Aktivitäten zu finden</p>
+    <p>Wir helfen dir einen Partner für deine sportlichen Aktivitäten zu finden<br></p>
     <img src="../assets/sport.jpg" id="image">
 <br>
   </div>
