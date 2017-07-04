@@ -58,12 +58,11 @@
 
 
 <div class="input-group">
+<p>Datum:  <br></p>
+       <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+      <date-picker :date="date" :option="timeoption"  v-model="activity.date" ></date-picker>
+    </div>
 
-<div class="row">
-      <span>Datum：</span>
-      <date-picker :date="date" :option="timeoption"  v-model="activity.date"></date-picker>
-    </div>
-    </div>
 
       <p></p>
 
@@ -242,6 +241,9 @@ li {
 margin: 0 !important;
 }
 
+input.cov-datepicker {
+    line-height: 2.10em !important;
+}
 </style>
 
 
