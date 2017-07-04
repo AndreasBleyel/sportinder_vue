@@ -114,7 +114,7 @@
       },
       addSubscriber: function () {
         this.activity.subscribers++;
-        console.log("Subs lokal: "+this.activity.subscribers);
+        console.log("Subs lokal: " + this.activity.subscribers);
         this.updateActivity();
       },
       removeSubscriber: function () {
@@ -134,12 +134,12 @@
           startingtime: this.activity.startingtime,
           difficulty: this.activity.difficulty,
           duration: this.activity.duration,
-          startingadr: this.activity.city +', '+this.activity.startingadr,
+          startingadr: this.activity.city + ', ' + this.activity.startingadr,
           lat: this.activity.lat,
           long: this.activity.long,
           subscribers: this.activity.subscribers
         }).then(response => {
-            console.log("upgedatet");
+          console.log("upgedatet");
         });
       }
     }
