@@ -15,6 +15,20 @@ npm install bootstrap-vue --save
 # install vue-resource for HTTP requests
 npm install vue-resource
 
+# install calender / datepicker
+# calendar and datepicker component with material design for Vue.js
+
+npm install vue-datepicker
+# if you have problems here change the import statement from 
+# import myDatepicker from 'vue-datepicker'
+# to
+# import myDatepicker from 'vue-datepicker/vue-datepicker-es6.vue'
+
+
+# install google-maps 
+# This is the Vue 2.x port of vue-google-maps!
+npm install vue2-google-maps
+
 # serve with hot reload at localhost:8080
 npm run dev
 
