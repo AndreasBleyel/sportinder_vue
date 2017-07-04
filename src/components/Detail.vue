@@ -27,7 +27,7 @@
         <button class="btn btn-danger" v-on:click="deleteActivity">Löschen</button>
         <button class="btn btn-success" v-on:click="addSubscriber">Teilnehmen</button>
         <button class="btn btn-success" v-on:click="removeSubscriber">Absagen</button>
-        <p>Teilnehmer: {{this.subscribers}}</p>
+        <p>Teilnehmer: {{activity.subscribers}}</p>
       </small>
     </b-card>
 
@@ -79,12 +79,10 @@
            lat: ''*/
         },
 
-        subscribers: 0
       }
     },
     created: function () {
       this.getActivity(this.idActivity);
-
     },
     methods: {
       getActivity: function (idActivity) {
@@ -115,12 +113,34 @@
         }
       },
       addSubscriber: function () {
-          this.subscribers++;
+        this.activity.subscribers++;
+        console.log("Subs lokal: "+this.activity.subscribers);
+        this.updateActivity();
       },
       removeSubscriber: function () {
-        if(this.subscribers > 0){
-            this.subscribers--;
+        if (this.activity.subscribers > 0) {
+          this.activity.subscribers--;
+          this.updateActivity();
         }
+      },
+      updateActivity: function () {
+
+        var resource = this.$resource('http://localhost:3000/api/activities{/id}');
+
+        resource.update({id: this.activity.id}, {
+          name: this.activity.name,
+          description: this.activity.description,
+          creator: this.activity.creator,
+          startingtime: this.activity.startingtime,
+          difficulty: this.activity.difficulty,
+          duration: this.activity.duration,
+          startingadr: this.activity.city +', '+this.activity.startingadr,
+          lat: this.activity.lat,
+          long: this.activity.long,
+          subscribers: this.activity.subscribers
+        }).then(response => {
+            console.log("upgedatet");
+        });
       }
     }
   }
