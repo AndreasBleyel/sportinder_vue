@@ -25,7 +25,9 @@
       </gmap-map>
       <small slot="footer" class="text-muted">
         <button class="btn btn-danger" v-on:click="deleteActivity">Löschen</button>
-        <button class="btn btn-success">Teilnehmen</button>
+        <button class="btn btn-success" v-on:click="addSubscriber">Teilnehmen</button>
+        <button class="btn btn-success" v-on:click="removeSubscriber">Absagen</button>
+        <p>Teilnehmer: {{this.subscribers}}</p>
       </small>
     </b-card>
 
@@ -75,7 +77,9 @@
            startingadr: '',
            long: '',
            lat: ''*/
-        }
+        },
+
+        subscribers: 0
       }
     },
     created: function () {
@@ -109,8 +113,14 @@
         } else {
           //cancel
         }
-
-
+      },
+      addSubscriber: function () {
+          this.subscribers++;
+      },
+      removeSubscriber: function () {
+        if(this.subscribers > 0){
+            this.subscribers--;
+        }
       }
     }
   }
