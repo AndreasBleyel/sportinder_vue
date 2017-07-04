@@ -37,8 +37,8 @@
 
   import * as VueGoogleMaps from 'vue2-google-maps';
 
+  import Vue from 'vue';
 
-  import Vue from 'vue'
 
   Vue.use(VueGoogleMaps, {
     load: {
@@ -67,19 +67,20 @@
 
         activity: {
           /*name: '',
-          description: '',
-          creator: '',
-          startingtime: '',
-          difficulty: '',
-          duration: '',
-          startingadr: '',
-          long: '',
-          lat: ''*/
+           description: '',
+           creator: '',
+           startingtime: '',
+           difficulty: '',
+           duration: '',
+           startingadr: '',
+           long: '',
+           lat: ''*/
         }
       }
     },
     created: function () {
       this.getActivity(this.idActivity);
+
     },
     methods: {
       getActivity: function (idActivity) {
@@ -99,13 +100,17 @@
       },
       deleteActivity: function () {
 
+        if (confirm("Aktivität löschen?") == true) {
+          var resource = this.$resource('http://localhost:3000/api/activities{/id}');
 
-        var resource = this.$resource('http://localhost:3000/api/activities{/id}');
-
-        // GET someItem/1
-        resource.delete({id: this.activity.id}).then(response => {
+          resource.delete({id: this.activity.id}).then(response => {
             console.log("Deleted: " + this.activity.id);
-        });
+          });
+        } else {
+          //cancel
+        }
+
+
       }
     }
   }
