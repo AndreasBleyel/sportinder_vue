@@ -150,6 +150,7 @@ import myDatepicker from 'vue-datepicker/vue-datepicker-es6.vue'
                               'padding': '6px',
                               'line-height': '22px',
                               'font-size': '16px',
+                              'font-family': 'Helvetica',
                               'border': '2px solid #fff',
                               'box-shadow': '0 1px 3px 0 rgba(0, 0, 0, 0.2)',
                               'border-radius': '2px',
