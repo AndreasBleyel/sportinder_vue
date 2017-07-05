@@ -1,12 +1,13 @@
 <template>
   <div class="Detail">
 
+    <!-- Darstellung der Aktivitäten als b-card (vue-bootstrap Modul) -->
     <b-card header="Aktivität"
             class="mb-2"
             :title="activity.name"
             :sub-title="activity.description + ' <br><hr>Startadresse: ' + activity.startingadr + '<br>Startzeit: ' + activity.startingtime +
             '<br>Dauer: ' + activity.duration + '<br>Schwierigkeit: ' + activity.difficulty +
-            'erstellt von: '+ activity.creator"
+            ' erstellt von: '+ activity.creator"
             show-footer
     >
       <gmap-map
@@ -27,7 +28,8 @@
         <button class="btn btn-danger" v-on:click="deleteActivity">Löschen</button>
         <button class="btn btn-success" v-on:click="addSubscriber">Teilnehmen</button>
         <button class="btn btn-success" v-on:click="removeSubscriber">Absagen</button>
-        <p>Teilnehmer: {{activity.subscribers}}</p>
+        <p>Teilnehmer: {{activity.subscribers}}</p><br>
+        ID: {{activity.id}}
       </small>
     </b-card>
 
@@ -53,12 +55,7 @@
 
   export default {
     name: 'Detail',
-    props: {
-      idActivity: {
-        type: Number,
-        required: true
-      }
-    },
+    props: ['idActivity'],
     data () {
       return {
 
@@ -67,21 +64,13 @@
           position: {lat: 10.0, lng: 10.0}
         }],
 
-        activity: {
-          /*name: '',
-           description: '',
-           creator: '',
-           startingtime: '',
-           difficulty: '',
-           duration: '',
-           startingadr: '',
-           long: '',
-           lat: ''*/
-        },
+        activity: {},
 
       }
     },
     created: function () {
+      //Bei Einbindung der <detail> Komponente wird mittels der übergebenen ID die Aktivität
+      //aus der DB abgefragt und in weiterer Folge dann angezeigt
       this.getActivity(this.idActivity);
     },
     methods: {
@@ -107,7 +96,8 @@
 
           resource.delete({id: this.activity.id}).then(response => {
             console.log("Deleted: " + this.activity.id);
-          });
+          this.$emit('delete');
+        });
         } else {
           //cancel
         }
@@ -141,6 +131,7 @@
         }).then(response => {
           console.log("upgedatet");
         });
+
       }
     }
   }

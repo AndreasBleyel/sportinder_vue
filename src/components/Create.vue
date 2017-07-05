@@ -90,7 +90,6 @@
       <p></p>
 
     </form>
-
     <router-link to="/">
       <button v-on:click="submit" type="submit" class="btn"><i class="glyphicon glyphicon-ok"></i>Bestätigen
       </button>
